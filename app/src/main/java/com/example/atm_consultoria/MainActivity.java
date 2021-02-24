@@ -1,5 +1,7 @@
 package com.example.atm_consultoria;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -30,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                enviarEmail();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -53,5 +54,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void enviarEmail(){
+        String celular= "tel:419985072967";
+        String imagem = "https://miro.medium.com/max/1280/0*kdPYTcHaaGRa4uvN.jpg";
+        String endereco = "https://www.google.com/maps/place/CC+Miranda+Loteria+%26+Lan+House/@-25.5308806,-49.2723415,3a,75y,300.74h,82.14t/data=!3m6!1e1!3m4!1s1F9eSC_9uOMAEpGlwBS1HA!2e0!7i13312!8i6656!4m13!1m7!3m6!1s0x94dcfb81816eaa0d:0x6069b7ebf95f06b3!2sR.+D%C3%ADdio+Sampaio+-+S%C3%ADtio+Cercado,+Curitiba+-+PR,+81900-748!3b1!8m2!3d-25.5320612!4d-49.275834!3m4!1s0x94dcfb8475750af7:0xd5a7a2037621b5ae!8m2!3d-25.5332334!4d-49.2789523";
+        //Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(imagem));
+        //Intent intent = new Intent( Intent.ACTION_DIAL, Uri.parse(celular));
+        //Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(endereco));
+        Intent intent = new Intent( Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"wesleyantunesdca@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Desenvolvimento do aplicativo");
+        intent.putExtra(Intent.EXTRA_TEXT,"Mensagem automárica");
+          intent.setType("message/rfc822");
+        //intent.setType("text/plain");
+        startActivity(Intent.createChooser( intent,"Enviar Email"));
+//      startActivity(intent);
     }
 }
