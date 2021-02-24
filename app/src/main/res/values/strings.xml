@@ -7,6 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="texto_principal">A ATM consultoria tem como objetivo orientar e apoiar organizações que tem como objetivo o sucesso!</string>
+
     <string name="menu_principal">Principal</string>
     <string name="menu_servicos">Servicos</string>
     <string name="menu_clientes">Clientes</string>

@@ -67,7 +67,6 @@ public class SobreFragment extends Fragment {
         versao.setTitle("Versão 1.0");
         View view = new AboutPage(getActivity())
                 .setImage(R.drawable.logo)
-                .setDescription("A ATM consultoria tem como objetivo orientar e apoiar organizações que tem como objetivo o sucesso!")
                 .addGroup("Entre em contato")
                 .addEmail("wesleyantunesdca@gmail.com","Envie um e-mail")
                 .addWebsite("https://github.com/Wesleyantunesdc","Acesseo o nosso site")
